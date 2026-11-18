@@ -1,0 +1,329 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MemoryLab | Adaptive Memory Allocation</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head><body><!-- NAVIGATION BAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        MEMORY<span>LAB</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#simulator">Simulator</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#about">About</a>
+    </div>
+
+    <div class="status">
+        SYSTEM ONLINE
+    </div>
+
+</nav>
+
+
+<!-- HOME SECTION -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <p class="subtitle">
+            OPERATING SYSTEM / MEMORY MANAGEMENT
+        </p>
+
+        <h1>
+            Adaptive Memory Allocation
+            <br>
+            <span>& Fragmentation Analysis</span>
+        </h1>
+
+        <p class="hero-description">
+            An intelligent simulation platform designed to analyze
+            memory allocation strategies, monitor fragmentation
+            and improve memory utilization.
+        </p>
+
+        <a href="#simulator" class="primary-btn">
+            Launch Simulator →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- DASHBOARD SECTION -->
+
+<section class="dashboard" id="dashboard">
+
+    <div class="section-heading">
+
+        <p class="subtitle">SYSTEM OVERVIEW</p>
+
+        <h2>Memory Dashboard</h2>
+
+    </div>
+
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+
+            <p>Total Memory</p>
+
+            <h2 id="totalStat">1000 KB</h2>
+
+            <span>Configured memory</span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <p>Allocated Memory</p>
+
+            <h2 id="usedStat">0 KB</h2>
+
+            <span>Memory in use</span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <p>Free Memory</p>
+
+            <h2 id="freeStat">1000 KB</h2>
+
+            <span>Available memory</span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <p>Memory Utilization</p>
+
+            <h2 id="utilStat">0%</h2>
+
+            <span>Usage percentage</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MEMORY SIMULATOR SECTION -->
+
+<section class="simulator-section" id="simulator">
+
+    <div class="section-heading">
+
+        <p class="subtitle">INTERACTIVE SIMULATION</p>
+
+        <h2>Memory Configuration</h2>
+
+        <p class="description">
+            Configure memory blocks and process requirements
+            to perform allocation simulations.
+        </p>
+
+    </div>
+
+
+    <div class="simulator-card">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label>Memory Blocks (KB)</label>
+
+                <input
+                    type="text"
+                    id="blocks"
+                    value="100,200,300,400"
+                    placeholder="100,200,300,400">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Process Sizes (KB)</label>
+
+                <input
+                    type="text"
+                    id="processes"
+                    value="150,250,100,350"
+                    placeholder="150,250,100,350">
+
+            </div>
+
+
+            <div class="form-group full-width">
+
+                <label>Select Allocation Algorithm</label>
+
+                <select id="algorithm">
+
+                    <option value="first">First Fit</option>
+
+                    <option value="best">Best Fit</option>
+
+                    <option value="worst">Worst Fit</option>
+
+                    <option value="next">Next Fit</option>
+
+                    <option value="adaptive">Adaptive Allocation</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="button-group">
+
+            <button
+                type="button"
+                class="primary-btn"
+                onclick="simulate()">
+
+                Run Simulation →
+
+            </button>
+
+
+            <button
+                type="button"
+                class="secondary-btn"
+                onclick="resetSimulator()">
+
+                Reset
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MEMORY VISUALIZATION AND ANALYSIS -->
+
+<section class="analysis-section" id="analysis">
+
+    <div class="section-heading">
+
+        <p class="subtitle">VISUAL MONITORING</p>
+
+        <h2>Memory Visualization</h2>
+
+        <p class="description">
+            Visual representation of allocated and remaining memory.
+        </p>
+
+    </div>
+
+
+    <div class="visual-card">
+
+        <div class="legend">
+
+            <span>
+                <i class="allocated-dot"></i>
+                Allocated Memory
+            </span>
+
+            <span>
+                <i class="free-dot"></i>
+                Free Memory
+            </span>
+
+        </div>
+
+
+        <div id="memory" class="memory-container">
+
+            <p class="empty-message">
+                Run a simulation to view memory allocation.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- SIMULATION RESULTS -->
+
+    <div class="results-card">
+
+        <h3>Simulation Results</h3>
+
+        <div id="results">
+
+            <p class="empty-message">
+                Simulation results will appear here.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT SECTION - ONLY ONE -->
+
+<section class="about-section" id="about">
+
+    <p class="subtitle">ABOUT THE PROJECT</p>
+
+    <h2>Smarter Memory Management</h2>
+
+    <p>
+        Adaptive Memory Allocation and Fragmentation Analysis
+        Simulator is an educational project based on operating
+        system memory management.
+
+        It demonstrates First Fit, Best Fit, Worst Fit and Next Fit
+        allocation techniques, together with an adaptive allocation
+        strategy.
+
+        The system helps users understand memory utilization,
+        allocation efficiency and external fragmentation through
+        interactive simulations.
+    </p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        Adaptive Memory Allocation & Fragmentation Analysis Simulator
+    </p>
+
+    <span>Operating System Project</span>
+
+</footer>
+
+
+<!-- JAVASCRIPT FILE -->
+
+<script src="script.js"></script>
+
+</body></html>
